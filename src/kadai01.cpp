@@ -16,7 +16,6 @@ int nth_prime(int a,int b,int n) {
 			}
 		}
 		if (flag == 0) {
-			//printf("%dは素数です\n", e);
 			count++;
 		}
 		if (count == n) {
