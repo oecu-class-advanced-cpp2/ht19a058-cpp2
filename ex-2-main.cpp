@@ -14,7 +14,6 @@ namespace cpp2 {
 	*/
 	/* --------------------------------------------------------------------- */
 	class mcxi {
-		//int num;
 	public:
 		/* ----------------------------------------------------------------- */
 		/*
@@ -42,11 +41,11 @@ namespace cpp2 {
 				{
 					int u = unit(*pos);
 					value_ += std::max(num, 1)*u;
-					num = 0;
+					//num = 0;
 					//sum += num*u;
 				}
 			}
-			std::cout << sum << std::endl;
+			std::cout << value_ << std::endl;
 		}
 
 
@@ -57,9 +56,10 @@ namespace cpp2 {
 		2 つのオブジェクトの加算結果を取得します。
 		*/
 		/* ----------------------------------------------------------------- */
-		mcxi operator+(mcxi& rhs) {
-			int num;
-			return rhs;
+		mcxi operator+(const mcxi& rhs) {
+			mcxi tc(rhs);
+			tc.value_ = this->value_ + rhs.value_;
+			return tc;
 		}
 
 		/* ----------------------------------------------------------------- */
